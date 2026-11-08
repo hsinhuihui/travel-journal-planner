@@ -4,15 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🎒 日系繪本手帳旅遊誌 | 京都 4 天 3 夜慢活指南</title>
-  <!-- 引入 Google Fonts Huninn 與 M PLUS Rounded 1c -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Huninn&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
-  
   <style>
-    /* ========================================================
-       🎨 日系手帳繪本風全域變數與重設
-       ======================================================== */
     :root {
       --bg-washipaper: #FFFCF6;
       --border-dark: #3E3A39;
@@ -24,13 +19,7 @@
       --shadow-hard: 4px 4px 0px #3E3A39;
       --shadow-hard-sm: 2px 2px 0px #3E3A39;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg-washipaper);
       color: var(--border-dark);
@@ -39,8 +28,6 @@
       padding-top: 80px;
       overflow-x: hidden;
     }
-
-    /* 支援減少動態效果 (prefers-reduced-motion) */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -49,362 +36,123 @@
         scroll-behavior: auto !important;
       }
     }
-
-    /* ========================================================
-       📌 頂端固定選單 (Fixed Sticky Nav)
-       ======================================================== */
     .fixed-nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
+      top: 0; left: 0; width: 100%; height: 70px;
       background-color: var(--card-white);
       border-bottom: 3px solid var(--border-dark);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 28px;
-      z-index: 999;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; z-index: 999;
       box-shadow: 0 4px 0px rgba(62, 58, 57, 0.05);
     }
-
     .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--border-dark);
-      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.25rem; font-weight: 800; color: var(--border-dark); text-decoration: none;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-    }
-
+    .nav-links { display: flex; gap: 12px; align-items: center; }
     .nav-pill {
       background-color: var(--bg-washipaper);
       border: 3px solid var(--border-dark);
       border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--border-dark);
-      text-decoration: none;
+      padding: 6px 14px; font-size: 0.9rem; font-weight: 700;
+      color: var(--border-dark); text-decoration: none;
       box-shadow: var(--shadow-hard-sm);
       transition: transform 0.1s ease;
     }
-
-    .nav-pill:hover {
-      background-color: var(--yellow-yamabuki);
-      transform: translate(-1px, -1px);
-    }
-
-    .nav-pill.home-btn {
-      background-color: var(--pink-coral);
-    }
-
-    /* ========================================================
-       📦 手帳共用卡片與排版基底
-       ======================================================== */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px 16px;
-    }
-
+    .nav-pill:hover { background-color: var(--yellow-yamabuki); transform: translate(-1px, -1px); }
+    .nav-pill.home-btn { background-color: var(--pink-coral); }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
     .handbook-card {
       background-color: var(--card-white);
       border: 3px solid var(--border-dark);
-      border-radius: 24px;
-      padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-hard);
-      position: relative;
+      border-radius: 24px; padding: 28px; margin-bottom: 28px;
+      box-shadow: var(--shadow-hard); position: relative;
     }
-
     .section-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
     }
-
-    /* ========================================================
-       🌸 首頁 Hero 區塊與 SVG 插圖
-       ======================================================== */
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-      gap: 20px;
-    }
-
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 20px; }
     .trip-badge {
-      display: inline-block;
-      background-color: var(--pink-coral);
-      border: 3px solid var(--border-dark);
-      border-radius: 999px;
-      padding: 4px 14px;
-      font-size: 0.9rem;
-      font-weight: 800;
-      box-shadow: var(--shadow-hard-sm);
-      margin-bottom: 12px;
+      display: inline-block; background-color: var(--pink-coral);
+      border: 3px solid var(--border-dark); border-radius: 999px;
+      padding: 4px 14px; font-size: 0.9rem; font-weight: 800;
+      box-shadow: var(--shadow-hard-sm); margin-bottom: 12px;
     }
-
-    .hero-title {
-      font-size: 2.1rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
-
+    .hero-title { font-size: 2.1rem; font-weight: 800; line-height: 1.25; margin-bottom: 8px; }
     .countdown-card {
       background-color: var(--yellow-yamabuki);
-      border: 3px solid var(--border-dark);
-      border-radius: 18px;
-      padding: 12px 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 14px;
-      box-shadow: var(--shadow-hard-sm);
+      border: 3px solid var(--border-dark); border-radius: 18px;
+      padding: 12px 18px; display: inline-flex; align-items: center; gap: 12px;
+      margin-top: 14px; box-shadow: var(--shadow-hard-sm);
     }
-
-    .countdown-num {
-      font-size: 1.6rem;
-      font-weight: 800;
-    }
-
-    /* SVG 漂浮微動動畫 */
+    .countdown-num { font-size: 1.6rem; font-weight: 800; }
     @keyframes gentleFloat {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-6px) rotate(1.5deg); }
     }
-
-    .hero-svg-container {
-      display: flex;
-      justify-content: center;
-      animation: gentleFloat 3.6s ease-in-out infinite;
-    }
-
-    /* ========================================================
-       ✈️ 航班卡片
-       ======================================================== */
-    .flight-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
+    .hero-svg-container { display: flex; justify-content: center; animation: gentleFloat 3.6s ease-in-out infinite; }
+    .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .flight-subcard {
-      background-color: var(--bg-washipaper);
-      border: 3px solid var(--border-dark);
-      border-radius: 16px;
-      padding: 16px;
+      background-color: var(--bg-washipaper); border: 3px solid var(--border-dark);
+      border-radius: 16px; padding: 16px;
     }
-
-    .flight-subcard h4 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: var(--border-dark);
-    }
-
-    /* ========================================================
-       🗓️ 每日行程：分頁切換按鈕 ＋ 時間軸
-       ======================================================== */
-    .day-tabs {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-      overflow-x: auto;
-      padding-bottom: 6px;
-    }
-
+    .day-tabs { display: flex; gap: 12px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 6px; }
     .day-tab-btn {
-      background-color: var(--card-white);
-      border: 3px solid var(--border-dark);
-      border-radius: 999px;
-      padding: 8px 20px;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: var(--shadow-hard-sm);
-      transition: all 0.15s ease;
-      white-space: nowrap;
+      background-color: var(--card-white); border: 3px solid var(--border-dark);
+      border-radius: 999px; padding: 8px 20px; font-family: inherit; font-size: 0.95rem; font-weight: 800;
+      cursor: pointer; box-shadow: var(--shadow-hard-sm); transition: all 0.15s ease; white-space: nowrap;
     }
-
     .day-tab-btn.active {
-      background-color: var(--yellow-yamabuki);
-      transform: translate(2px, 2px);
-      box-shadow: 0px 0px 0px #3E3A39;
+      background-color: var(--yellow-yamabuki); transform: translate(2px, 2px); box-shadow: 0px 0px 0px #3E3A39;
     }
-
-    /* 切換日期彈跳效果 */
     @keyframes tabBounce {
       0% { transform: scale(0.97); opacity: 0.5; }
       70% { transform: scale(1.02); }
       100% { transform: scale(1.0); opacity: 1; }
     }
-
-    .timeline-container {
-      display: none;
-      animation: tabBounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .timeline-container.active {
-      display: block;
-    }
-
-    .timeline-list {
-      position: relative;
-      padding-left: 28px;
-    }
-
+    .timeline-container { display: none; animation: tabBounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .timeline-container.active { display: block; }
+    .timeline-list { position: relative; padding-left: 28px; }
     .timeline-list::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      bottom: 10px;
-      width: 4px;
-      background-color: var(--border-dark);
-      border-radius: 2px;
+      content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 4px;
+      background-color: var(--border-dark); border-radius: 2px;
     }
-
     .timeline-item {
-      position: relative;
-      margin-bottom: 24px;
-      background-color: var(--bg-washipaper);
-      border: 3px solid var(--border-dark);
-      border-radius: 18px;
-      padding: 16px 20px;
+      position: relative; margin-bottom: 24px; background-color: var(--bg-washipaper);
+      border: 3px solid var(--border-dark); border-radius: 18px; padding: 16px 20px;
     }
-
     .timeline-item::after {
-      content: '';
-      position: absolute;
-      left: -24px;
-      top: 18px;
-      width: 12px;
-      height: 12px;
-      background-color: var(--yellow-yamabuki);
-      border: 3px solid var(--border-dark);
-      border-radius: 50%;
+      content: ''; position: absolute; left: -24px; top: 18px; width: 12px; height: 12px;
+      background-color: var(--yellow-yamabuki); border: 3px solid var(--border-dark); border-radius: 50%;
     }
-
-    .item-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 6px;
-    }
-
-    .time-badge {
-      background-color: var(--border-dark);
-      color: #FFF;
-      padding: 2px 8px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .spot-title {
-      font-size: 1.15rem;
-      font-weight: 800;
-    }
-
-    /* 必去重點標籤 (珊瑚粉) */
+    .item-header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .time-badge { background-color: var(--border-dark); color: #FFF; padding: 2px 8px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; }
+    .spot-title { font-size: 1.15rem; font-weight: 800; }
     .badge-must-go {
-      background-color: var(--pink-coral);
-      border: 2px solid var(--border-dark);
-      color: var(--border-dark);
-      font-size: 0.75rem;
-      font-weight: 800;
-      padding: 2px 8px;
-      border-radius: 999px;
+      background-color: var(--pink-coral); border: 2px solid var(--border-dark);
+      color: var(--border-dark); font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 999px;
     }
-
-    /* 彩色交通膠囊標籤 */
     .badge-transport {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background-color: var(--blue-mizu);
-      border: 2px solid var(--border-dark);
-      font-size: 0.8rem;
-      font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-top: 8px;
+      display: inline-flex; align-items: center; gap: 4px; background-color: var(--blue-mizu);
+      border: 2px solid var(--border-dark); font-size: 0.8rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 999px; margin-top: 8px;
     }
-
-    .badge-walk {
-      background-color: var(--green-wakatake);
-    }
-
-    /* ========================================================
-       ✅ 打勾待辦清單與住宿資訊
-       ======================================================== */
-    .checklist-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 1.05rem;
-      cursor: pointer;
-      user-select: none;
-    }
-
+    .badge-walk { background-color: var(--green-wakatake); }
+    .checklist-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 1.05rem; cursor: pointer; user-select: none; }
     .checklist-item input[type="checkbox"] {
-      appearance: none;
-      width: 22px;
-      height: 22px;
-      border: 3px solid var(--border-dark);
-      border-radius: 6px;
-      background-color: #FFF;
-      cursor: pointer;
-      position: relative;
+      appearance: none; width: 22px; height: 22px; border: 3px solid var(--border-dark);
+      border-radius: 6px; background-color: #FFF; cursor: pointer; position: relative;
     }
-
-    .checklist-item input[type="checkbox"]:checked {
-      background-color: var(--green-wakatake);
-    }
-
+    .checklist-item input[type="checkbox"]:checked { background-color: var(--green-wakatake); }
     .checklist-item input[type="checkbox"]:checked::after {
-      content: '✔';
-      position: absolute;
-      top: -3px;
-      left: 2px;
-      font-size: 14px;
-      color: var(--border-dark);
+      content: '✔'; position: absolute; top: -3px; left: 2px; font-size: 14px; color: var(--border-dark);
     }
-
-    .checklist-item.checked span {
-      text-decoration: line-through;
-      color: #8C887B;
-    }
-
-    @media (max-width: 680px) {
-      .hero-grid, .flight-grid {
-        grid-template-columns: 1fr;
-      }
-      body {
-        padding-top: 70px;
-      }
-    }
+    .checklist-item.checked span { text-decoration: line-through; color: #8C887B; }
+    @media (max-width: 680px) { .hero-grid, .flight-grid { grid-template-columns: 1fr; } body { padding-top: 70px; } }
   </style>
 </head>
 <body>
-
-  <!-- 頂部固定選單 -->
   <nav class="fixed-nav">
     <a href="../index.html" class="brand-logo">
       <svg width="28" height="28" viewBox="0 0 32 32">
@@ -423,15 +171,12 @@
   </nav>
 
   <div class="container">
-
-    <!-- 首頁 Hero 區塊 -->
     <header class="handbook-card">
       <div class="hero-grid">
         <div>
           <span class="trip-badge">🇰🇷 首爾潮流 × 韓屋漫步</span>
           <h1 class="hero-title">首爾 4 天 3 夜時髦漫遊指南</h1>
           <p style="color: #6B685B; font-weight: 600;">穿梭聖水洞紅磚咖啡店、北村韓屋聚落與明洞夜市，感受首爾傳統與前衛並存的迷人節奏。</p>
-          
           <div class="countdown-card">
             <span style="font-size: 1.4rem;">⏳</span>
             <div>
@@ -440,39 +185,25 @@
             </div>
           </div>
         </div>
-
-        <!-- 純 SVG 自繪首爾主題特色插圖（N 首爾塔 + 傳統韓屋飛簷景） -->
         <div class="hero-svg-container">
           <svg width="240" height="200" viewBox="0 0 240 200">
-            <!-- 南山山坡 -->
             <path d="M10 180 Q 80 130 180 160 T 235 180 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
-            <!-- 太陽 / 月亮氣氛球 -->
             <circle cx="50" cy="55" r="22" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
-            
-            <!-- N 首爾塔主體 -->
             <polygon points="175,155 178,65 186,65 189,155" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
-            <!-- 塔頂觀景台雙層 -->
             <rect x="171" y="60" width="22" height="10" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
             <rect x="174" y="52" width="16" height="8" rx="2" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
-            <!-- 塔尖天線發射台 -->
             <line x1="182" y1="52" x2="182" y2="25" stroke="#3E3A39" stroke-width="2.5"/>
             <circle cx="182" cy="23" r="3" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
-
-            <!-- 傳統韓屋屋頂瓦片（瓦頂飛簷） -->
             <path d="M40 145 C 55 125, 95 125, 115 145 L 110 152 C 95 138, 60 138, 45 152 Z" fill="#3E3A39"/>
             <rect x="52" y="150" width="50" height="25" rx="3" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-            <!-- 韓屋木格窗 -->
             <rect x="58" y="155" width="16" height="14" fill="#F6D27A" stroke="#3E3A39" stroke-width="1.5"/>
             <rect x="78" y="155" width="16" height="14" fill="#F6D27A" stroke="#3E3A39" stroke-width="1.5"/>
-
-            <!-- 地面綠色飾條 -->
             <rect x="15" y="180" width="210" height="12" rx="6" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
           </svg>
         </div>
       </div>
     </header>
 
-    <!-- 航班交通卡片 -->
     <section id="flight" class="handbook-card">
       <h3 class="section-title">✈️ 航班與往返安排</h3>
       <div class="flight-grid">
@@ -491,11 +222,8 @@
       </div>
     </section>
 
-    <!-- 每日行程時間軸 -->
     <section id="itinerary" class="handbook-card">
       <h3 class="section-title">🗺️ 每日詳細行程指南</h3>
-      
-      <!-- 日期膠囊切換 -->
       <div class="day-tabs">
         <button class="day-tab-btn active" onclick="switchDay(1)">Day 1 (12/10) 明洞與首爾塔夜景</button>
         <button class="day-tab-btn" onclick="switchDay(2)">Day 2 (12/11) 景福宮與北村韓屋散策</button>
@@ -503,7 +231,6 @@
         <button class="day-tab-btn" onclick="switchDay(4)">Day 4 (12/13) 弘大晨光與滿載歸途</button>
       </div>
 
-      <!-- Day 1 時間軸 -->
       <div id="day-1" class="timeline-container active">
         <div class="timeline-list">
           <div class="timeline-item">
@@ -514,7 +241,6 @@
             <p>搭乘直達車抵達市中心，至明洞九樹酒店寄放隨身行李、兌換韓幣現金與領取 T-money 交通卡。</p>
             <div class="badge-transport">🚄 AREX 直達列車 43 分鐘</div>
           </div>
-
           <div class="timeline-item">
             <div class="item-header">
               <span class="time-badge">14:00</span>
@@ -524,142 +250,12 @@
             <p>品嚐米其林必比登推薦的手工刀削麵、鮮美小籠餃子，搭配爽脆香辣泡菜，開展首爾美食第一站。</p>
             <div class="badge-transport badge-walk">🚶 步行 5 分鐘</div>
           </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">17:30</span>
-              <span class="spot-title">南山南山纜車 ＆ N 首爾塔觀景台</span>
-              <span class="badge-must-go">★ 必去</span>
-            </div>
-            <p>黃昏搭乘南山透明纜車登上山頂，在首爾塔展望台俯瞰百萬市區日落與璀璨夜景，掛上祈福愛情鎖。</p>
-            <div class="badge-transport">🚠 南山纜車 10 分鐘</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">20:30</span>
-              <span class="spot-title">明洞夜市小吃巡禮</span>
-            </div>
-            <p>回程沿路品嚐熱騰騰的起司辣炒年糕、黑糖餅、魚板湯與手撕龍蝦起司串燒。</p>
-            <div class="badge-transport badge-walk">🚶 漫步 15 分鐘</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Day 2 時間軸 -->
-      <div id="day-2" class="timeline-container">
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">09:00</span>
-              <span class="spot-title">景福宮韓服體驗與光化門守門將換崗</span>
-              <span class="badge-must-go">★ 必去</span>
-            </div>
-            <p>租借優雅傳統韓服免門票入宮，在勤政殿與慶會樓前拍攝紀念美照，觀摩氣勢磅礡的守門將換崗儀式。</p>
-            <div class="badge-transport">🚇 首爾地鐵 3 號線景福宮站</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">12:30</span>
-              <span class="spot-title">土俗村蔘雞湯午餐</span>
-              <span class="badge-must-go">★ 必去</span>
-            </div>
-            <p>濃郁順口的糯米人蔘雞湯，搭配人蔘酒滋補元氣，首爾必吃排隊代表名店。</p>
-            <div class="badge-transport badge-walk">🚶 步行 8 分鐘</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">14:30</span>
-              <span class="spot-title">北村韓屋村 ＆ 三清洞藝術街道</span>
-            </div>
-            <p>漫步在傳統瓦房與高聳斜坡之間（北村八景），順道逛逛三清洞獨具品味的文創小店與工藝工坊。</p>
-            <div class="badge-transport badge-walk">🚶 步行 15 分鐘</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">18:00</span>
-              <span class="spot-title">益善洞韓屋村特色晚餐（溫咖啡／烤肉）</span>
-            </div>
-            <p>老韓屋改建的摩登文青聚落，享用蒸籠起司吐司或韓牛五花肉，夜晚點燈氣氛滿分。</p>
-            <div class="badge-transport">🚇 地鐵 5 號線至鍾路三街站</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Day 3 時間軸 -->
-      <div id="day-3" class="timeline-container">
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">10:00</span>
-              <span class="spot-title">聖水洞紅磚工廠巡禮 & TAMBURINS / GENTLE MONSTER</span>
-              <span class="badge-must-go">★ 必去</span>
-            </div>
-            <p>走訪首爾當紅潮流文創聚落，朝聖香氛旗艦店藝術展覽空間與工業風老宅咖啡廳 Onion。</p>
-            <div class="badge-transport">🚇 首爾地鐵 2 號線聖水站</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">13:00</span>
-              <span class="spot-title">祖傳三代馬鈴薯排骨湯（聖水本店）</span>
-            </div>
-            <p>熱滾滾的骨付肉燉煮得軟爛入味，搭配濃郁紫蘇葉與炒飯，排隊也是值得的極致美味。</p>
-            <div class="badge-transport badge-walk">🚶 步行 6 分鐘</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">15:30</span>
-              <span class="spot-title">現代百貨首爾 (The Hyundai Seoul)</span>
-            </div>
-            <p>走訪首爾最大室內綠意百貨，打卡 5 樓室內空中花園與多樣化人氣快閃店。</p>
-            <div class="badge-transport">🚇 地鐵 5 號線汝矣島站</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">18:30</span>
-              <span class="spot-title">汝矣島漢江公園野餐 ＆ 韓式橋村炸雞配啤酒</span>
-              <span class="badge-must-go">★ 必去</span>
-            </div>
-            <p>租借野餐墊吹拂漢江晚風，用外送 App 點橋村蜂蜜炸雞與煮一碗漢江泡麵，體驗最道地的首爾日常浪漫。</p>
-            <div class="badge-transport badge-walk">🚶 步行 10 分鐘</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Day 4 時間軸 -->
-      <div id="day-4" class="timeline-container">
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">09:30</span>
-              <span class="spot-title">弘大商圈晨間漫步 ＆ 申美京辣炒雞排早午餐</span>
-            </div>
-            <p>早晨人潮較少時逛弘大主街文創小店（Butter / Kakao Friends），午間品嚐濃濃起司辣炒雞排。</p>
-            <div class="badge-transport">🚇 首爾地鐵 2 號線弘大入口站</div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">12:30</span>
-              <span class="spot-title">弘大入口搭乘 AREX 直奔仁川機場</span>
-            </div>
-            <p>於弘大站直上 AREX 列車直達仁川機場第一航廈，辦理退稅、免稅店提貨與登機手續。</p>
-            <div class="badge-transport">🚄 AREX 普通列車直達 50 分鐘</div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- 待辦清單與住宿備忘 -->
     <section id="checklist" class="handbook-card">
       <h3 class="section-title">🎒 行前備忘與住宿指南</h3>
-      
       <div style="margin-bottom: 24px;">
         <h4 style="margin-bottom: 12px;">✅ 必帶裝備與手續打勾清單</h4>
         <label class="checklist-item">
@@ -670,50 +266,28 @@
           <input type="checkbox" onchange="toggleCheck(this)">
           <span>預先下載 NAVER Map（韓國 Google Maps 路線支援度較差）</span>
         </label>
-        <label class="checklist-item">
-          <input type="checkbox" onchange="toggleCheck(this)">
-          <span>T-money 交通卡或 WOWPASS 多功能換匯扣款卡</span>
-        </label>
-        <label class="checklist-item">
-          <input type="checkbox" onchange="toggleCheck(this)">
-          <span>韓國規格雙圓孔轉接插頭（4.8mm 歐規圓腳）</span>
-        </label>
       </div>
-
       <div style="background-color: var(--bg-washipaper); border: 3px solid var(--border-dark); border-radius: 16px; padding: 16px;">
         <h4 style="margin-bottom: 8px;">🏨 預定住宿資訊</h4>
         <p><strong>飯店名稱：</strong>明洞九樹頂級酒店（Nine Tree Premier Hotel Myeongdong 2）</p>
         <p><strong>飯店地址：</strong>首爾特別市中區乙支路 16 街 28</p>
-        <p><strong>備註說明：</strong>下午 15:00 後辦理 Check-in，鄰近乙支路 3 街站與明洞夜市，交通位置極度便利。</p>
       </div>
     </section>
-
   </div>
 
   <script>
-    // 1. 日期分頁切換邏輯
     function switchDay(dayNum) {
       document.querySelectorAll('.timeline-container').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.day-tab-btn').forEach(btn => btn.classList.remove('active'));
-      
       const targetTimeline = document.getElementById(`day-${dayNum}`);
-      if (targetTimeline) {
-        targetTimeline.classList.add('active');
-      }
-      
-      // 設定當前點擊的按鈕為 active
+      if (targetTimeline) targetTimeline.classList.add('active');
       const buttons = document.querySelectorAll('.day-tab-btn');
-      if (buttons[dayNum - 1]) {
-        buttons[dayNum - 1].classList.add('active');
-      }
+      if (buttons[dayNum - 1]) buttons[dayNum - 1].classList.add('active');
     }
-
-    // 2. 出發倒數計時器（設定目標日期為 2026/12/10）
     function updateCountdown() {
       const targetDate = new Date('2026-12-10T07:45:00+08:00').getTime();
       const now = new Date().getTime();
       const diff = targetDate - now;
-
       if (diff > 0) {
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -724,15 +298,10 @@
     }
     updateCountdown();
     setInterval(updateCountdown, 60000);
-
-    // 3. 待辦清單文字劃線
     function toggleCheck(checkbox) {
       const parent = checkbox.closest('.checklist-item');
-      if (checkbox.checked) {
-        parent.classList.add('checked');
-      } else {
-        parent.classList.remove('checked');
-      }
+      if (checkbox.checked) parent.classList.add('checked');
+      else parent.classList.remove('checked');
     }
   </script>
 </body>
