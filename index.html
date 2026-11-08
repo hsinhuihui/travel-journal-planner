@@ -132,7 +132,8 @@
       align-self: flex-start;
     }
 
-    .badge-seoul { background-color: var(--pink-coral); }
+    .badge-chongqing { background-color: var(--pink-coral); }
+    .badge-seoul { background-color: var(--blue-mizu); }
     .badge-kyoto { background-color: var(--yellow-yamabuki); }
     .badge-upcoming { background-color: var(--green-wakatake); }
 
@@ -148,7 +149,6 @@
       text-align: center;
     }
 
-    /* 更多旅遊規劃，陸續加入中 區塊樣式（手帳風格） */
     .more-plans-card {
       background-color: #FFFDF8;
       border: 3px dashed var(--border-dark);
@@ -233,7 +233,7 @@
     <header class="handbook-card">
       <div class="banner-grid">
         <div>
-          <span class="plan-badge badge-seoul">✨ 精選旅遊手帳庫</span>
+          <span class="plan-badge badge-chongqing">🌶️ 最新上架行程</span>
           <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">日系繪本旅遊手帳範本庫</h1>
           <p style="color: #6B685B; font-weight: 600;">依據 AGENTS.md 規格打造的標準化旅遊指南展示庫。點選下方卡片即可瀏覽各目的地詳細規劃！</p>
         </div>
@@ -252,6 +252,16 @@
       <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 16px;">📌 精選行程範本列表</h2>
       
       <div class="grid-cards">
+        <!-- 中國重慶卡片 (本次新增) -->
+        <a href="plans/chongqing-5d4n.html" class="plan-card">
+          <div>
+            <span class="plan-badge badge-chongqing">🇨🇳 中國重慶 · 5天4夜</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">重慶魔幻立體山城散策</h3>
+            <p style="font-size: 0.9rem; color: #555;">洪崖洞神隱少女夜景、李子壩輕軌穿樓、長江索道空中渡江與武隆喀斯特天坑。</p>
+          </div>
+          <div class="btn-view">開啟手帳行程 ➔</div>
+        </a>
+
         <!-- 韓國首爾卡片 -->
         <a href="plans/seoul-4d3n.html" class="plan-card">
           <div>
@@ -272,16 +282,14 @@
           <div class="btn-view">開啟手帳行程 ➔</div>
         </a>
 
-        <!-- 新增卡片區塊：更多旅遊規劃，陸續加入中 -->
+        <!-- 更多旅遊規劃，陸續加入中 區塊 -->
         <div class="more-plans-card">
           <div style="animation: gentleFloat 3s ease-in-out infinite; margin-bottom: 12px;">
             <svg width="56" height="56" viewBox="0 0 64 64">
-              <!-- 手帳筆記本與鉛筆手繪插圖 -->
               <rect x="10" y="8" width="38" height="48" rx="6" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
               <line x1="18" y1="18" x2="38" y2="18" stroke="#F6D27A" stroke-width="3" stroke-linecap="round"/>
               <line x1="18" y1="28" x2="34" y2="28" stroke="#A8D3E6" stroke-width="3" stroke-linecap="round"/>
               <line x1="18" y1="38" x2="30" y2="38" stroke="#B9DAA5" stroke-width="3" stroke-linecap="round"/>
-              <!-- 鉛筆 -->
               <g transform="rotate(35 44 38)">
                 <rect x="40" y="22" width="8" height="24" rx="2" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
                 <polygon points="40,46 48,46 44,52" fill="#3E3A39"/>
