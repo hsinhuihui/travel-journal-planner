@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎒 旅人繪本手帳 | 精選旅遊行程規劃範本庫</title>
+  <!-- 引入 Google Fonts Huninn 與 M PLUS Rounded 1c -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-washipaper: #FFFCF6;
+      --border-dark: #3E3A39;
+      --pink-coral: #F2A497;
+      --yellow-yamabuki: #F6D27A;
+      --blue-mizu: #A8D3E6;
+      --green-wakatake: #B9DAA5;
+      --card-white: #FFFFFF;
+      --shadow-hard: 4px 4px 0px #3E3A39;
+      --shadow-hard-sm: 2px 2px 0px #3E3A39;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-washipaper);
+      color: var(--border-dark);
+      font-family: 'Huninn', 'M PLUS Rounded 1c', 'Noto Sans TC', sans-serif;
+      line-height: 1.6;
+      padding-top: 80px;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: var(--card-white);
+      border-bottom: 3px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      z-index: 999;
+      box-shadow: 0 4px 0px rgba(62, 58, 57, 0.05);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--border-dark);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .handbook-card {
+      background-color: var(--card-white);
+      border: 3px solid var(--border-dark);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-hard);
+    }
+
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(1.5deg); }
+    }
+
+    .banner-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .plan-card {
+      background-color: var(--bg-washipaper);
+      border: 3px solid var(--border-dark);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: var(--shadow-hard-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .plan-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 5px 5px 0px var(--border-dark);
+      background-color: #FFFFFF;
+    }
+
+    .plan-badge {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 999px;
+      border: 2px solid var(--border-dark);
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+
+    .badge-seoul { background-color: var(--pink-coral); }
+    .badge-kyoto { background-color: var(--yellow-yamabuki); }
+
+    .btn-view {
+      display: inline-block;
+      margin-top: 16px;
+      background-color: var(--yellow-yamabuki);
+      border: 2px solid var(--border-dark);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .banner-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="fixed-nav">
+    <a href="#" class="brand-logo">
+      <svg width="28" height="28" viewBox="0 0 32 32">
+        <rect x="4" y="6" width="24" height="22" rx="4" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+        <path d="M11 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" fill="none" stroke="#3E3A39" stroke-width="2.5"/>
+        <line x1="16" y1="6" x2="16" y2="28" stroke="#3E3A39" stroke-width="2"/>
+      </svg>
+      旅人繪本手帳
+    </a>
+  </nav>
+
+  <div class="container">
+    <header class="handbook-card">
+      <div class="banner-grid">
+        <div>
+          <span class="plan-badge badge-seoul">✨ 最新新增行程</span>
+          <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">日系繪本旅遊手帳範本庫</h1>
+          <p style="color: #6B685B; font-weight: 600;">依據 AGENTS.md 規格打造的標準化旅遊指南展示庫。點選下方卡片即可瀏覽各目的地詳細規劃！</p>
+        </div>
+        <div style="display: flex; justify-content: center; animation: gentleFloat 3.5s ease-in-out infinite;">
+          <svg width="180" height="150" viewBox="0 0 200 160">
+            <rect x="20" y="30" width="160" height="110" rx="16" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+            <rect x="35" y="45" width="60" height="40" rx="8" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+            <circle cx="140" cy="65" r="18" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="35" y="95" width="130" height="12" rx="6" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <section class="handbook-card">
+      <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 16px;">📌 精選行程範本列表</h2>
+      <div class="grid-cards">
+        <!-- 韓國首爾卡片 -->
+        <a href="plans/seoul-4d3n.html" class="plan-card">
+          <div>
+            <span class="plan-badge badge-seoul">🇰🇷 韓國首爾 · 4天3夜</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">首爾潮流與古韻漫遊指南</h3>
+            <p style="font-size: 0.9rem; color: #555;">明洞夜市、景福宮韓服、土俗村蔘雞湯、聖水洞旗艦店與漢江泡麵野餐。</p>
+          </div>
+          <div class="btn-view">開啟手帳行程 ➔</div>
+        </a>
+
+        <!-- 日本京都示範卡片 -->
+        <a href="plans/kyoto-4d3n.html" class="plan-card">
+          <div>
+            <span class="plan-badge badge-kyoto">🇯🇵 日本京都 · 4天3夜</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">京都古都慢活指南</h3>
+            <p style="font-size: 0.9rem; color: #555;">漫步石疊小路、嵐山竹林、清水寺清水舞台與宇治抹茶香。</p>
+          </div>
+          <div class="btn-view">開啟手帳行程 ➔</div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
