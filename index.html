@@ -43,42 +43,25 @@
 
     .fixed-nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
+      top: 0; left: 0; width: 100%; height: 70px;
       background-color: var(--card-white);
       border-bottom: 3px solid var(--border-dark);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 28px;
-      z-index: 999;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; z-index: 999;
       box-shadow: 0 4px 0px rgba(62, 58, 57, 0.05);
     }
 
     .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--border-dark);
-      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.25rem; font-weight: 800; color: var(--border-dark); text-decoration: none;
     }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px 16px;
-    }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
 
     .handbook-card {
       background-color: var(--card-white);
       border: 3px solid var(--border-dark);
-      border-radius: 24px;
-      padding: 28px;
-      margin-bottom: 28px;
+      border-radius: 24px; padding: 28px; margin-bottom: 28px;
       box-shadow: var(--shadow-hard);
     }
 
@@ -88,31 +71,24 @@
     }
 
     .banner-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      align-items: center;
-      gap: 20px;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      align-items: center; gap: 20px;
     }
 
     .grid-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
+      gap: 24px; margin-top: 20px;
     }
 
     .plan-card {
       background-color: var(--bg-washipaper);
       border: 3px solid var(--border-dark);
-      border-radius: 20px;
-      padding: 22px;
+      border-radius: 20px; padding: 22px;
       box-shadow: var(--shadow-hard-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      display: flex; flex-direction: column; justify-content: space-between;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
-      text-decoration: none;
-      color: inherit;
+      text-decoration: none; color: inherit;
     }
 
     .plan-card:hover {
@@ -122,49 +98,35 @@
     }
 
     .plan-badge {
-      display: inline-block;
-      padding: 3px 12px;
-      border-radius: 999px;
-      border: 2px solid var(--border-dark);
-      font-size: 0.8rem;
-      font-weight: 800;
-      margin-bottom: 10px;
+      display: inline-block; padding: 3px 12px;
+      border-radius: 999px; border: 2px solid var(--border-dark);
+      font-size: 0.8rem; font-weight: 800; margin-bottom: 10px;
       align-self: flex-start;
     }
 
+    .badge-nyc { background-color: var(--blue-mizu); }
     .badge-chongqing { background-color: var(--pink-coral); }
-    .badge-seoul { background-color: var(--blue-mizu); }
-    .badge-kyoto { background-color: var(--yellow-yamabuki); }
-    .badge-upcoming { background-color: var(--green-wakatake); }
+    .badge-seoul { background-color: var(--yellow-yamabuki); }
+    .badge-kyoto { background-color: var(--green-wakatake); }
 
     .btn-view {
-      display: inline-block;
-      margin-top: 16px;
+      display: inline-block; margin-top: 16px;
       background-color: var(--yellow-yamabuki);
       border: 2px solid var(--border-dark);
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-weight: 800;
-      font-size: 0.9rem;
-      text-align: center;
+      border-radius: 999px; padding: 6px 14px;
+      font-weight: 800; font-size: 0.9rem; text-align: center;
     }
 
     .more-plans-card {
       background-color: #FFFDF8;
       border: 3px dashed var(--border-dark);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 230px;
-      position: relative;
+      border-radius: 20px; padding: 24px;
+      box-shadow: var(--shadow-hard-sm);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; min-height: 230px;
       background-image: radial-gradient(#E8E2D2 1.5px, transparent 1.5px);
       background-size: 16px 16px;
-      transition: transform 0.15s ease, background-color 0.15s ease;
+      transition: transform 0.15s ease;
     }
 
     .more-plans-card:hover {
@@ -172,47 +134,8 @@
       background-color: #FFFFFF;
     }
 
-    .more-plans-banner {
-      margin-top: 32px;
-      background-color: var(--bg-washipaper);
-      border: 3px solid var(--border-dark);
-      border-radius: 24px;
-      padding: 26px 32px;
-      box-shadow: var(--shadow-hard);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .badge-dots {
-      display: inline-flex;
-      gap: 6px;
-      align-items: center;
-      background-color: var(--blue-mizu);
-      border: 2px solid var(--border-dark);
-      border-radius: 999px;
-      padding: 4px 14px;
-      font-size: 0.85rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--pink-coral);
-      border: 1.5px solid var(--border-dark);
-      border-radius: 50%;
-      display: inline-block;
-    }
-
     @media (max-width: 680px) {
-      .banner-grid, .more-plans-banner {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-        text-align: center;
-      }
+      .banner-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -233,7 +156,7 @@
     <header class="handbook-card">
       <div class="banner-grid">
         <div>
-          <span class="plan-badge badge-chongqing">🌶️ 最新上架行程</span>
+          <span class="plan-badge badge-nyc">✨ 最新新增行程</span>
           <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">日系繪本旅遊手帳範本庫</h1>
           <p style="color: #6B685B; font-weight: 600;">依據 AGENTS.md 規格打造的標準化旅遊指南展示庫。點選下方卡片即可瀏覽各目的地詳細規劃！</p>
         </div>
@@ -250,9 +173,19 @@
 
     <section class="handbook-card">
       <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 16px;">📌 精選行程範本列表</h2>
-      
       <div class="grid-cards">
-        <!-- 中國重慶卡片 (本次新增) -->
+        
+        <!-- 美國紐約卡片 (NEW) -->
+        <a href="plans/newyork-6d5n.html" class="plan-card">
+          <div>
+            <span class="plan-badge badge-nyc">🇺🇸 美國紐約 · 6天5夜</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">紐約大蘋果經典漫遊指南</h3>
+            <p style="font-size: 0.9rem; color: #555;">自由女神渡輪、大都會藝術博物館、中央公園野餐、百老匯音樂劇、布魯克林大橋夕陽與雀兒喜海鮮。</p>
+          </div>
+          <div class="btn-view">開啟手帳行程 ➔</div>
+        </a>
+
+        <!-- 中國重慶卡片 -->
         <a href="plans/chongqing-5d4n.html" class="plan-card">
           <div>
             <span class="plan-badge badge-chongqing">🇨🇳 中國重慶 · 5天4夜</span>
@@ -282,7 +215,7 @@
           <div class="btn-view">開啟手帳行程 ➔</div>
         </a>
 
-        <!-- 更多旅遊規劃，陸續加入中 區塊 -->
+        <!-- 更多規劃預告卡片（依 AGENTS.md 規定：不增添多餘標籤，保留原定手帳風預告文字） -->
         <div class="more-plans-card">
           <div style="animation: gentleFloat 3s ease-in-out infinite; margin-bottom: 12px;">
             <svg width="56" height="56" viewBox="0 0 64 64">
@@ -297,11 +230,11 @@
             </svg>
           </div>
           <h3 style="font-size: 1.15rem; font-weight: 800; margin: 6px 0 4px 0;">更多旅遊規劃</h3>
-          <p style="font-size: 0.88rem; color: #6B685B; font-weight: 700;">陸續加入中，敬請期待 ✨</p>
+          <p style="font-size: 0.88rem; color: #6B685B; font-weight: 700;">陸續加入中…</p>
         </div>
+
       </div>
     </section>
-
   </div>
 
 </body>

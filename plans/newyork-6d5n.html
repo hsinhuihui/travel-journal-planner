@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎒 日系繪本手帳旅遊誌 | 美國紐約 6 天 5 夜大蘋果漫遊指南</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-washipaper: #FFFCF6;
+      --border-dark: #3E3A39;
+      --pink-coral: #F2A497;
+      --yellow-yamabuki: #F6D27A;
+      --blue-mizu: #A8D3E6;
+      --green-wakatake: #B9DAA5;
+      --card-white: #FFFFFF;
+      --shadow-hard: 4px 4px 0px #3E3A39;
+      --shadow-hard-sm: 2px 2px 0px #3E3A39;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-washipaper);
+      color: var(--border-dark);
+      font-family: 'Huninn', 'M PLUS Rounded 1c', 'Noto Sans TC', sans-serif;
+      line-height: 1.6;
+      padding-top: 80px;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    .fixed-nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 70px;
+      background-color: var(--card-white);
+      border-bottom: 3px solid var(--border-dark);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; z-index: 999;
+      box-shadow: 0 4px 0px rgba(62, 58, 57, 0.05);
+    }
+
+    .brand-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 1.25rem; font-weight: 800; color: var(--border-dark); text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 12px; align-items: center; }
+
+    .nav-pill {
+      background-color: var(--bg-washipaper);
+      border: 3px solid var(--border-dark);
+      border-radius: 999px;
+      padding: 6px 14px; font-size: 0.9rem; font-weight: 700;
+      color: var(--border-dark); text-decoration: none;
+      box-shadow: var(--shadow-hard-sm);
+      transition: transform 0.1s ease;
+    }
+
+    .nav-pill:hover { background-color: var(--yellow-yamabuki); transform: translate(-1px, -1px); }
+    .nav-pill.home-btn { background-color: var(--pink-coral); }
+
+    .container { max-width: 920px; margin: 0 auto; padding: 24px 16px; }
+
+    .handbook-card {
+      background-color: var(--card-white);
+      border: 3px solid var(--border-dark);
+      border-radius: 24px; padding: 28px; margin-bottom: 28px;
+      box-shadow: var(--shadow-hard); position: relative;
+    }
+
+    .section-title {
+      font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 20px; }
+
+    .trip-badge {
+      display: inline-block; background-color: var(--pink-coral);
+      border: 3px solid var(--border-dark); border-radius: 999px;
+      padding: 4px 14px; font-size: 0.9rem; font-weight: 800;
+      box-shadow: var(--shadow-hard-sm); margin-bottom: 12px;
+    }
+
+    .hero-title { font-size: 2.1rem; font-weight: 800; line-height: 1.25; margin-bottom: 8px; }
+
+    .countdown-card {
+      background-color: var(--yellow-yamabuki);
+      border: 3px solid var(--border-dark); border-radius: 18px;
+      padding: 12px 18px; display: inline-flex; align-items: center; gap: 12px;
+      margin-top: 14px; box-shadow: var(--shadow-hard-sm);
+    }
+
+    .countdown-num { font-size: 1.6rem; font-weight: 800; }
+
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(1.5deg); }
+    }
+
+    .hero-svg-container { display: flex; justify-content: center; animation: gentleFloat 3.6s ease-in-out infinite; }
+
+    .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .flight-subcard {
+      background-color: var(--bg-washipaper); border: 3px solid var(--border-dark);
+      border-radius: 16px; padding: 16px;
+    }
+
+    .flight-subcard h4 { font-size: 1.1rem; margin-bottom: 8px; }
+
+    .day-tabs { display: flex; gap: 10px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 6px; }
+
+    .day-tab-btn {
+      background-color: var(--card-white); border: 3px solid var(--border-dark);
+      border-radius: 999px; padding: 8px 18px; font-family: inherit; font-size: 0.92rem; font-weight: 800;
+      cursor: pointer; box-shadow: var(--shadow-hard-sm); transition: all 0.15s ease; white-space: nowrap;
+    }
+
+    .day-tab-btn.active {
+      background-color: var(--yellow-yamabuki); transform: translate(2px, 2px); box-shadow: 0px 0px 0px #3E3A39;
+    }
+
+    @keyframes tabBounce {
+      0% { transform: scale(0.97); opacity: 0.5; }
+      70% { transform: scale(1.02); }
+      100% { transform: scale(1.0); opacity: 1; }
+    }
+
+    .timeline-container { display: none; animation: tabBounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .timeline-container.active { display: block; }
+
+    .timeline-list { position: relative; padding-left: 28px; }
+
+    .timeline-list::before {
+      content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 4px;
+      background-color: var(--border-dark); border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative; margin-bottom: 22px; background-color: var(--bg-washipaper);
+      border: 3px solid var(--border-dark); border-radius: 18px; padding: 16px 20px;
+    }
+
+    .timeline-item::after {
+      content: ''; position: absolute; left: -24px; top: 18px; width: 12px; height: 12px;
+      background-color: var(--yellow-yamabuki); border: 3px solid var(--border-dark); border-radius: 50%;
+    }
+
+    .item-header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
+
+    .time-badge {
+      background-color: var(--border-dark); color: #FFF; padding: 2px 8px;
+      border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+    }
+
+    .spot-title { font-size: 1.15rem; font-weight: 800; }
+
+    .badge-must-go {
+      background-color: var(--pink-coral); border: 2px solid var(--border-dark);
+      color: var(--border-dark); font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 999px;
+    }
+
+    .badge-transport {
+      display: inline-flex; align-items: center; gap: 4px; background-color: var(--blue-mizu);
+      border: 2px solid var(--border-dark); font-size: 0.8rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 999px; margin-top: 8px;
+    }
+
+    .badge-walk { background-color: var(--green-wakatake); }
+
+    .checklist-item {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+      font-size: 1.05rem; cursor: pointer; user-select: none;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      appearance: none; width: 22px; height: 22px; border: 3px solid var(--border-dark);
+      border-radius: 6px; background-color: #FFF; cursor: pointer; position: relative;
+    }
+
+    .checklist-item input[type="checkbox"]:checked { background-color: var(--green-wakatake); }
+    .checklist-item input[type="checkbox"]:checked::after {
+      content: '✔'; position: absolute; top: -3px; left: 2px; font-size: 14px; color: var(--border-dark);
+    }
+
+    .checklist-item.checked span { text-decoration: line-through; color: #8C887B; }
+
+    @media (max-width: 720px) {
+      .hero-grid, .flight-grid { grid-template-columns: 1fr; }
+      body { padding-top: 70px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 頂端固定選單 -->
+  <nav class="fixed-nav">
+    <a href="../index.html" class="brand-logo">
+      <svg width="28" height="28" viewBox="0 0 32 32">
+        <rect x="4" y="6" width="24" height="22" rx="4" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+        <path d="M11 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" fill="none" stroke="#3E3A39" stroke-width="2.5"/>
+        <line x1="16" y1="6" x2="16" y2="28" stroke="#3E3A39" stroke-width="2"/>
+      </svg>
+      旅人繪本手帳
+    </a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-pill home-btn">回首頁</a>
+      <a href="#flight" class="nav-pill">航班</a>
+      <a href="#itinerary" class="nav-pill">每日行程</a>
+      <a href="#checklist" class="nav-pill">備忘清單</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- 2. 首頁 Hero 區塊 -->
+    <header class="handbook-card">
+      <div class="hero-grid">
+        <div>
+          <span class="trip-badge">🗽 紐約天際線 × 藝文漫遊</span>
+          <h1 class="hero-title">紐約 6 天 5 夜經典漫遊指南</h1>
+          <p style="color: #6B685B; font-weight: 600;">漫步曼哈頓摩天高樓、中央公園野餐、百老匯璀璨夜宴與布魯克林日落散策，深度體驗大蘋果的熱烈魅力。</p>
+          
+          <div class="countdown-card">
+            <span style="font-size: 1.4rem;">⏳</span>
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 700;">旅程出發倒數</div>
+              <div class="countdown-num" id="countdown-timer">計算中...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 內嵌手繪紐約地標特色 SVG（自由女神、帝國大廈與黃色計程車） -->
+        <div class="hero-svg-container">
+          <svg width="250" height="210" viewBox="0 0 250 210">
+            <!-- 背景日光 -->
+            <circle cx="205" cy="50" r="24" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+            
+            <!-- 曼哈頓摩天剪影群 -->
+            <rect x="75" y="80" width="30" height="95" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="110" y="55" width="36" height="120" rx="3" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+            <!-- 帝國大廈尖頂塔 -->
+            <polygon points="128,25 125,55 131,55" fill="#3E3A39"/>
+            <circle cx="128" cy="22" r="3" fill="#F2A497" stroke="#3E3A39" stroke-width="1.5"/>
+            <rect x="150" y="90" width="32" height="85" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+
+            <!-- 自由女神像手繪簡化風格 (若竹綠平塗) -->
+            <g transform="translate(15, 60)">
+              <!-- 底座基石 -->
+              <rect x="12" y="85" width="30" height="30" rx="2" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+              <!-- 身軀長袍 -->
+              <path d="M20,85 L22,50 L32,50 L34,85 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2"/>
+              <!-- 頭部與冠冕 -->
+              <circle cx="27" cy="42" r="6" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2"/>
+              <path d="M22,38 L27,33 L32,38 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="1.5"/>
+              <!-- 舉火炬之手 -->
+              <line x1="32" y1="50" x2="39" y2="30" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
+              <polygon points="37,28 41,28 39,20" fill="#F2A497" stroke="#3E3A39" stroke-width="1.5"/>
+            </g>
+
+            <!-- 地面柏油道路 -->
+            <rect x="10" y="175" width="230" height="16" rx="6" fill="#3E3A39"/>
+            <line x1="20" y1="183" x2="230" y2="183" stroke="#F6D27A" stroke-width="2" stroke-dasharray="8 6"/>
+
+            <!-- 紐約代表 Yellow Cab 計程車 -->
+            <g transform="translate(130, 150)">
+              <rect x="0" y="10" width="60" height="18" rx="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+              <rect x="12" y="0" width="32" height="12" rx="3" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2"/>
+              <rect x="23" y="-4" width="10" height="4" fill="#3E3A39"/>
+              <!-- 車輪 -->
+              <circle cx="14" cy="28" r="6" fill="#3E3A39"/>
+              <circle cx="14" cy="28" r="2.5" fill="#FFFFFF"/>
+              <circle cx="46" cy="28" r="6" fill="#3E3A39"/>
+              <circle cx="46" cy="28" r="2.5" fill="#FFFFFF"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- 3. 航班卡片 -->
+    <section id="flight" class="handbook-card">
+      <h3 class="section-title">✈️ 航班與往返安排</h3>
+      <div class="flight-grid">
+        <div class="flight-subcard">
+          <h4>去程航班（CI 012 直飛）</h4>
+          <p><strong>日期：</strong>2026/10/01 (四)</p>
+          <p><strong>時間：</strong>17:30 桃園機場 (TPE) ➔ 20:45 紐約甘迺迪機場 (JFK)</p>
+          <div class="badge-transport">🚄 搭乘 JFK AirTrain 轉地鐵 E 線直通曼哈頓市中心</div>
+        </div>
+        <div class="flight-subcard">
+          <h4>回程航班（CI 011 直飛）</h4>
+          <p><strong>日期：</strong>2026/10/06 (二)</p>
+          <p><strong>時間：</strong>23:30 紐約甘迺迪機場 (JFK) ➔ 次日 05:00 桃園機場 (TPE)</p>
+          <div class="badge-transport">🚄 提前 3.5 小時抵達 JFK 辦理行李托運與出境退稅</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 每日行程時間軸 -->
+    <section id="itinerary" class="handbook-card">
+      <h3 class="section-title">🗺️ 每日詳細行程指南</h3>
+      
+      <!-- 日期膠囊切換 -->
+      <div class="day-tabs">
+        <button class="day-tab-btn active" onclick="switchDay(1)">Day 1 (10/01) 初抵大蘋果</button>
+        <button class="day-tab-btn" onclick="switchDay(2)">Day 2 (10/02) 自由女神與世貿金融</button>
+        <button class="day-tab-btn" onclick="switchDay(3)">Day 3 (10/03) 藝文殿堂與中央公園</button>
+        <button class="day-tab-btn" onclick="switchDay(4)">Day 4 (10/04) 高架公園與雀兒喜市集</button>
+        <button class="day-tab-btn" onclick="switchDay(5)">Day 5 (10/05) 布魯克林與蘇活文青</button>
+        <button class="day-tab-btn" onclick="switchDay(6)">Day 6 (10/06) 洛克斐勒與繁華歸途</button>
+      </div>
+
+      <!-- Day 1 時間軸 -->
+      <div id="day-1" class="timeline-container active">
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">21:30</span>
+              <span class="spot-title">甘迺迪機場入境 & AirTrain 直奔曼哈頓</span>
+            </div>
+            <p>辦理入境手續、出關提領行李，搭乘 AirTrain 連接地鐵 E 線抵達曼哈頓市區飯店辦理 Check-in。</p>
+            <div class="badge-transport">🚄 JFK AirTrain 轉紐約地鐵 E 線</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">23:00</span>
+              <span class="spot-title">時代廣場夜景漫步 & 初見不夜城</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>深夜漫步於燈火通明的時代廣場，霓虹巨幅看板震撼登場，在熱鬧歡騰的氛圍中感受紐約的脈動。</p>
+            <div class="badge-transport badge-walk">🚶 步行 6 分鐘</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 時間軸 -->
+      <div id="day-2" class="timeline-container">
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">09:00</span>
+              <span class="spot-title">砲台公園搭乘渡輪 ＆ 自由女神像巡禮</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>在砲台公園搭乘早班渡輪前往自由島（Liberty Island），近距離仰望自由女神雕像，並登埃利斯島感受移民歷史震撼。</p>
+            <div class="badge-transport">⛴️ 自由女神專用觀光渡輪</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">12:30</span>
+              <span class="spot-title">華爾街金融中心 & 觸摸象徵好運的銅牛</span>
+            </div>
+            <p>走訪紐約證券交易所、三一教堂與摸摸華爾街銅牛求好運，沿路品嚐美式熱狗堡快餐。</p>
+            <div class="badge-transport badge-walk">🚶 步行 10 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">14:30</span>
+              <span class="spot-title">世貿中心歸零地（9/11 Memorial）與眼窩車站 Oculus</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>肅穆凝視水流匯聚的紀念瀑布水池，走進純白翅膀造型的建築奇蹟 Oculus 車站感受流線空間之美。</p>
+            <div class="badge-transport badge-walk">🚶 步行 8 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">18:30</span>
+              <span class="spot-title">世貿一號觀景台（One World Observatory）俯瞰夕陽</span>
+            </div>
+            <p>搭乘高速電梯直達 102 樓，360 度無死角俯瞰哈德遜河、東河與曼哈頓南端的日落天際線。</p>
+            <div class="badge-transport badge-walk">🚶 步行 5 分鐘</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 時間軸 -->
+      <div id="day-3" class="timeline-container">
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">09:30</span>
+              <span class="spot-title">大都會藝術博物館 (The Met) 沉浸藝文</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>走訪世界四大博物館之一，親眼見證埃及丹鐸神廟、梵谷、莫內等巨匠的不朽真跡。</p>
+            <div class="badge-transport">🚇 紐約地鐵 4/5/6 號線至 86th St</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">13:00</span>
+              <span class="spot-title">中央公園野餐 ＆ 畢士達噴泉、綿羊草坪散步</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>帶著紐約超人氣 Levain Bakery 剛出爐的核桃黑巧克力軟餅乾，在中央公園草坪上悠閒野餐曬暖陽。</p>
+            <div class="badge-transport badge-walk">🚶 步行 5 分鐘進入公園</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">16:30</span>
+              <span class="spot-title">第五大道奢華櫥窗巡禮 ＆ 聖派翠克大教堂</span>
+            </div>
+            <p>沿著第五大道漫步，參觀宏偉的哥德復興式天主教堂，感受紐約街頭歷史與現代的交織。</p>
+            <div class="badge-transport badge-walk">🚶 漫步 15 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">19:30</span>
+              <span class="spot-title">百老匯經典音樂劇《獅子王》或《歌劇魅影》</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>親臨劇院欣賞極致舞台燈光與現場管弦樂交織的百老匯夢幻盛宴，此生必看。</p>
+            <div class="badge-transport">🚇 地鐵至 Times Square-42 St 站</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 4 時間軸 -->
+      <div id="day-4" class="timeline-container">
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">10:00</span>
+              <span class="spot-title">高架公園 (The High Line) 空中綠廊漫步</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>由廢棄高架貨運鐵道改建的城市空中花園，沿途穿梭於紅磚廠房與前衛建築之間。</p>
+            <div class="badge-transport">🚇 地鐵 A/C/E 線至 14th St</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">12:30</span>
+              <span class="spot-title">雀兒喜市場 (Chelsea Market) 龍蝦海鮮大餐</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>在百年餅乾工廠改造的文青市集享用現蒸波士頓活龍蝦、海膽與香酥炸魚薯條。</p>
+            <div class="badge-transport badge-walk">🚶 直通步行 3 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">15:00</span>
+              <span class="spot-title">哈德遜園區 The Vessel 巨型松果 ＆ The Edge 懸空觀景台</span>
+            </div>
+            <p>打卡蜂巢立體建築，登上西半球最高戶外空中觀景台 The Edge，挑戰透明玻璃底板直視千呎高空。</p>
+            <div class="badge-transport badge-walk">🚶 沿高架公園北行步行 20 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">18:30</span>
+              <span class="spot-title">韓國城 K-Town 熱騰騰豆腐鍋與韓式烤肉</span>
+            </div>
+            <p>走訪曼哈頓 32 街，享用濃郁噴香的韓式石鍋拌飯與嫩豆腐湯，暖胃又滿足。</p>
+            <div class="badge-transport">🚇 地鐵 7 號線轉 N/Q/R 線至 34 St-Herald Sq</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 5 時間軸 -->
+      <div id="day-5" class="timeline-container">
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">10:00</span>
+              <span class="spot-title">SOHO 蘇活區鑄鐵建築群 ＆ 潮流文創選物店</span>
+            </div>
+            <p>漫步在石板路上欣賞古典鑄鐵外觀建築，逛逛獨立設計師品牌、精品香氛與潮流選品旗艦店。</p>
+            <div class="badge-transport">🚇 地鐵 N/R/W 線至 Prince St 站</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">13:00</span>
+              <span class="spot-title">小義大利與中國城道地美食（意式肉醬麵／手工小籠包）</span>
+            </div>
+            <p>享受兩大歷史移民街區的道地滋味，搭配一杯醇厚的意式濃縮咖啡與現炸卡諾里捲 (Cannoli)。</p>
+            <div class="badge-transport badge-walk">🚶 步行 8 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">15:30</span>
+              <span class="spot-title">DUMBO 曼哈頓大橋經典紅磚街景打卡</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>在 Washington St 的經典視角，拍下紅磚倉庫夾著曼哈頓大橋拱門的電影級明信片構圖。</p>
+            <div class="badge-transport">🚇 地鐵 F 線至 York St 站</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">17:30</span>
+              <span class="spot-title">布魯克林大橋步行橫跨 ＆ 東河金色日落</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>由布魯克林端沿著百年懸索木板棧道漫步返回曼哈頓，迎著夕陽金光，飽覽震撼的摩天樓群天際線。</p>
+            <div class="badge-transport badge-walk">🚶 跨橋漫步約 35 分鐘</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 6 時間軸 -->
+      <div id="day-6" class="timeline-container">
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">09:30</span>
+              <span class="spot-title">紐約公共圖書館 (NYPL) ＆ 布萊恩公園 (Bryant Park)</span>
+            </div>
+            <p>走訪百年古典主閱讀室 Rose Main Reading Room，隨後在布萊恩公園樹蔭下品嚐美式貝果佐香濃乳酪抹醬。</p>
+            <div class="badge-transport">🚇 地鐵 B/D/F/M 至 42 St-Bryant Pk</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">11:30</span>
+              <span class="spot-title">中央車站 (Grand Central Terminal) 仰望星座星空穹頂</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>參觀宏偉的布雜藝術大廳、打卡四面水晶鐘與回音壁，感受百年鐵道客運的中樞魅力。</p>
+            <div class="badge-transport badge-walk">🚶 步行 6 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">14:00</span>
+              <span class="spot-title">洛克斐勒中心 ＆ 巨石之頂 (Top of the Rock) 告別全景</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>登上最能完整遠眺帝國大廈與中央公園的景觀台，用最清晰壯闊的角度為紐約之行留下完美紀念。</p>
+            <div class="badge-transport badge-walk">🚶 步行 10 分鐘</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">18:30</span>
+              <span class="spot-title">曼哈頓最後採買 ＆ 啟程搭車前往甘迺迪機場</span>
+            </div>
+            <p>提取行李，搭乘地鐵 E 線直達 Jamaica 站轉 AirTrain 抵達 JFK 第八航廈，搭機返回溫暖的家。</p>
+            <div class="badge-transport">🚄 地鐵 E 線直達轉 AirTrain 約 55 分</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 待辦清單與住宿備忘 -->
+    <section id="checklist" class="handbook-card">
+      <h3 class="section-title">🎒 行前備忘與住宿指南</h3>
+      
+      <div style="margin-bottom: 24px;">
+        <h4 style="margin-bottom: 12px;">✅ 必帶裝備與手續打勾清單</h4>
+        <label class="checklist-item">
+          <input type="checkbox" onchange="toggleCheck(this)">
+          <span>預先辦理美國 ESTA 旅行授權許可（核准有效 2 年）</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox" onchange="toggleCheck(this)">
+          <span>開通手機 Apple Pay / Google Pay（紐約 OMNY 感應刷卡直接搭地鐵）</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox" onchange="toggleCheck(this)">
+          <span>預約熱門景點門票（自由女神渡輪、The Met、百老匯音樂劇票）</span>
+        </label>
+        <label class="checklist-item">
+          <input type="checkbox" onchange="toggleCheck(this)">
+          <span>準備好走舒適的健走鞋（紐約每日平均步數 15,000~20,000 步）</span>
+        </label>
+      </div>
+
+      <div style="background-color: var(--bg-washipaper); border: 3px solid var(--border-dark); border-radius: 16px; padding: 16px;">
+        <h4 style="margin-bottom: 8px;">🏨 預定住宿資訊</h4>
+        <p><strong>飯店名稱：</strong>紐約時代廣場 CitizenM 酒店（citizenM New York Times Square）</p>
+        <p><strong>飯店地址：</strong>218 W 50th St, New York, NY 10019</p>
+        <p><strong>備註說明：</strong>下午 14:00 後辦理 Check-in，步行 2 分鐘直達 50th St 地鐵站，地理位置絕佳。</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function switchDay(dayNum) {
+      document.querySelectorAll('.timeline-container').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.day-tab-btn').forEach(btn => btn.classList.remove('active'));
+      
+      const targetTimeline = document.getElementById(`day-${dayNum}`);
+      if (targetTimeline) {
+        targetTimeline.classList.add('active');
+      }
+      
+      const buttons = document.querySelectorAll('.day-tab-btn');
+      if (buttons[dayNum - 1]) {
+        buttons[dayNum - 1].classList.add('active');
+      }
+    }
+
+    function updateCountdown() {
+      const targetDate = new Date('2026-10-01T17:30:00+08:00').getTime();
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById('countdown-timer').innerText = `${days} 天 ${hours} 小時`;
+      } else {
+        document.getElementById('countdown-timer').innerText = `紐約旅程進行中 🎉`;
+      }
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+
+    function toggleCheck(checkbox) {
+      const parent = checkbox.closest('.checklist-item');
+      if (checkbox.checked) {
+        parent.classList.add('checked');
+      } else {
+        parent.classList.remove('checked');
+      }
+    }
+  </script>
+</body>
+</html>

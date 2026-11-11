@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎒 日系繪本手帳旅遊誌 | 中國重慶 5 天 4 夜山城魔幻散策</title>
+  <title>🎒 日系繪本手帳旅遊誌 | 日本京都 4 天 3 夜古都慢活散策指南</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Huninn&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --bg-washipaper: #FFFCF6;
@@ -19,7 +20,9 @@
       --shadow-hard: 4px 4px 0px #3E3A39;
       --shadow-hard-sm: 2px 2px 0px #3E3A39;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       background-color: var(--bg-washipaper);
       color: var(--border-dark);
@@ -28,6 +31,7 @@
       padding-top: 80px;
       overflow-x: hidden;
     }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -36,6 +40,7 @@
         scroll-behavior: auto !important;
       }
     }
+
     .fixed-nav {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 70px;
@@ -45,11 +50,14 @@
       padding: 0 28px; z-index: 999;
       box-shadow: 0 4px 0px rgba(62, 58, 57, 0.05);
     }
+
     .brand-logo {
       display: flex; align-items: center; gap: 10px;
       font-size: 1.25rem; font-weight: 800; color: var(--border-dark); text-decoration: none;
     }
+
     .nav-links { display: flex; gap: 12px; align-items: center; }
+
     .nav-pill {
       background-color: var(--bg-washipaper);
       border: 3px solid var(--border-dark);
@@ -59,100 +67,145 @@
       box-shadow: var(--shadow-hard-sm);
       transition: transform 0.1s ease;
     }
+
     .nav-pill:hover { background-color: var(--yellow-yamabuki); transform: translate(-1px, -1px); }
     .nav-pill.home-btn { background-color: var(--pink-coral); }
-    .container { max-width: 900px; margin: 0 auto; padding: 24px 16px; }
+
+    .container { max-width: 920px; margin: 0 auto; padding: 24px 16px; }
+
     .handbook-card {
       background-color: var(--card-white);
       border: 3px solid var(--border-dark);
       border-radius: 24px; padding: 28px; margin-bottom: 28px;
       box-shadow: var(--shadow-hard); position: relative;
     }
+
     .section-title {
       font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;
       display: flex; align-items: center; gap: 10px;
     }
+
     .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 20px; }
+
     .trip-badge {
       display: inline-block; background-color: var(--pink-coral);
       border: 3px solid var(--border-dark); border-radius: 999px;
       padding: 4px 14px; font-size: 0.9rem; font-weight: 800;
       box-shadow: var(--shadow-hard-sm); margin-bottom: 12px;
     }
+
     .hero-title { font-size: 2.1rem; font-weight: 800; line-height: 1.25; margin-bottom: 8px; }
+
     .countdown-card {
       background-color: var(--yellow-yamabuki);
       border: 3px solid var(--border-dark); border-radius: 18px;
       padding: 12px 18px; display: inline-flex; align-items: center; gap: 12px;
       margin-top: 14px; box-shadow: var(--shadow-hard-sm);
     }
+
     .countdown-num { font-size: 1.6rem; font-weight: 800; }
+
     @keyframes gentleFloat {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-6px) rotate(1.5deg); }
     }
+
     .hero-svg-container { display: flex; justify-content: center; animation: gentleFloat 3.6s ease-in-out infinite; }
+
     .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
     .flight-subcard {
       background-color: var(--bg-washipaper); border: 3px solid var(--border-dark);
       border-radius: 16px; padding: 16px;
     }
+
+    .flight-subcard h4 { font-size: 1.1rem; margin-bottom: 8px; }
+
     .day-tabs { display: flex; gap: 10px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 6px; }
+
     .day-tab-btn {
       background-color: var(--card-white); border: 3px solid var(--border-dark);
       border-radius: 999px; padding: 8px 18px; font-family: inherit; font-size: 0.92rem; font-weight: 800;
       cursor: pointer; box-shadow: var(--shadow-hard-sm); transition: all 0.15s ease; white-space: nowrap;
     }
+
     .day-tab-btn.active {
       background-color: var(--yellow-yamabuki); transform: translate(2px, 2px); box-shadow: 0px 0px 0px #3E3A39;
     }
+
     @keyframes tabBounce {
       0% { transform: scale(0.97); opacity: 0.5; }
       70% { transform: scale(1.02); }
       100% { transform: scale(1.0); opacity: 1; }
     }
+
     .timeline-container { display: none; animation: tabBounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
     .timeline-container.active { display: block; }
+
     .timeline-list { position: relative; padding-left: 28px; }
+
     .timeline-list::before {
       content: ''; position: absolute; left: 10px; top: 10px; bottom: 10px; width: 4px;
       background-color: var(--border-dark); border-radius: 2px;
     }
+
     .timeline-item {
-      position: relative; margin-bottom: 24px; background-color: var(--bg-washipaper);
+      position: relative; margin-bottom: 22px; background-color: var(--bg-washipaper);
       border: 3px solid var(--border-dark); border-radius: 18px; padding: 16px 20px;
     }
+
     .timeline-item::after {
       content: ''; position: absolute; left: -24px; top: 18px; width: 12px; height: 12px;
       background-color: var(--yellow-yamabuki); border: 3px solid var(--border-dark); border-radius: 50%;
     }
+
     .item-header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
-    .time-badge { background-color: var(--border-dark); color: #FFF; padding: 2px 8px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; }
+
+    .time-badge {
+      background-color: var(--border-dark); color: #FFF; padding: 2px 8px;
+      border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+    }
+
     .spot-title { font-size: 1.15rem; font-weight: 800; }
+
     .badge-must-go {
       background-color: var(--pink-coral); border: 2px solid var(--border-dark);
       color: var(--border-dark); font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 999px;
     }
+
     .badge-transport {
       display: inline-flex; align-items: center; gap: 4px; background-color: var(--blue-mizu);
       border: 2px solid var(--border-dark); font-size: 0.8rem; font-weight: 700; padding: 3px 10px;
       border-radius: 999px; margin-top: 8px;
     }
+
     .badge-walk { background-color: var(--green-wakatake); }
-    .checklist-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 1.05rem; cursor: pointer; user-select: none; }
+
+    .checklist-item {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 12px;
+      font-size: 1.05rem; cursor: pointer; user-select: none;
+    }
+
     .checklist-item input[type="checkbox"] {
       appearance: none; width: 22px; height: 22px; border: 3px solid var(--border-dark);
       border-radius: 6px; background-color: #FFF; cursor: pointer; position: relative;
     }
+
     .checklist-item input[type="checkbox"]:checked { background-color: var(--green-wakatake); }
     .checklist-item input[type="checkbox"]:checked::after {
       content: '✔'; position: absolute; top: -3px; left: 2px; font-size: 14px; color: var(--border-dark);
     }
+
     .checklist-item.checked span { text-decoration: line-through; color: #8C887B; }
-    @media (max-width: 680px) { .hero-grid, .flight-grid { grid-template-columns: 1fr; } body { padding-top: 70px; } }
+
+    @media (max-width: 720px) {
+      .hero-grid, .flight-grid { grid-template-columns: 1fr; }
+      body { padding-top: 70px; }
+    }
   </style>
 </head>
 <body>
+
   <!-- 1. 頂端固定選單 -->
   <nav class="fixed-nav">
     <a href="../index.html" class="brand-logo">
@@ -172,96 +225,104 @@
   </nav>
 
   <div class="container">
+
     <!-- 2. 首頁 Hero 區塊 -->
     <header class="handbook-card">
       <div class="hero-grid">
         <div>
-          <span class="trip-badge">🌶️ 8D 賽博魔幻山城 × 麻辣九宮格</span>
-          <h1 class="hero-title">京都 4 天 3 夜古都漫遊</h1>
-          <p style="color: #6B685B; font-weight: 600;">在長江索道掠過江面，目睹輕軌穿樓而過，沉醉於洪崖洞千廝門大橋的金碧輝煌，感受火鍋蒸騰與市井梯坎的麻辣人間。</p>
+          <span class="trip-badge">⛩️ 古都慢活 × 抹茶茶席</span>
+          <h1 class="hero-title">京都 4 天 3 夜慢活古都散策指南</h1>
+          <p style="color: #6B685B; font-weight: 600;">漫步祇園白川石疊小徑、東山南禪寺水路閣、嵐山嵯峨野竹林與品味正統宇治抹茶，享受避開擁擠人潮的靜謐和風雅韻。</p>
+          
           <div class="countdown-card">
             <span style="font-size: 1.4rem;">⏳</span>
             <div>
-              <div style="font-size: 0.8rem; font-weight: 700;">重慶之旅出發倒數</div>
+              <div style="font-size: 0.8rem; font-weight: 700;">旅程出發倒數</div>
               <div class="countdown-num" id="countdown-timer">計算中...</div>
             </div>
           </div>
         </div>
-        <!-- 內嵌自繪重慶主題特色插圖 (洪崖洞吊腳樓飛簷、跨江索道、穿樓輕軌列車) -->
+
+        <!-- 內嵌手繪京都特色 SVG（朱紅鳥居、日式町家茶屋與抹茶茶碗） -->
         <div class="hero-svg-container">
-          <svg width="250" height="205" viewBox="0 0 250 205">
-            <!-- 山形地景背景 -->
-            <path d="M10 185 Q70 120 140 160 T240 180 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
-            <!-- 暖橙紅夕陽 -->
-            <circle cx="205" cy="50" r="22" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-            
-            <!-- 洪崖洞層疊吊腳樓意象 -->
-            <rect x="25" y="115" width="75" height="65" rx="4" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
-            <!-- 飛簷屋頂 1 -->
-            <path d="M15 115 Q62 90 110 115 L102 120 Q62 100 23 120 Z" fill="#3E3A39"/>
-            <!-- 飛簷屋頂 2 -->
-            <path d="M30 85 Q62 65 95 85 L90 90 Q62 72 35 90 Z" fill="#3E3A39"/>
-            <rect x="38" y="90" width="48" height="25" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2"/>
-            <!-- 吊腳樓格子木窗 -->
-            <rect x="35" y="128" width="16" height="18" fill="#F2A497" stroke="#3E3A39" stroke-width="1.8"/>
-            <rect x="58" y="128" width="16" height="18" fill="#F2A497" stroke="#3E3A39" stroke-width="1.8"/>
-            <rect x="80" y="128" width="12" height="18" fill="#F2A497" stroke="#3E3A39" stroke-width="1.8"/>
+          <svg width="250" height="210" viewBox="0 0 250 210">
+            <!-- 背景秋日暖陽 -->
+            <circle cx="50" cy="50" r="24" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
 
-            <!-- 長江索道鋼纜與車廂 -->
-            <line x1="10" y1="35" x2="240" y2="75" stroke="#3E3A39" stroke-width="2.5" stroke-dasharray="2,2"/>
-            <!-- 索道車廂吊臂 -->
-            <line x1="130" y1="56" x2="130" y2="72" stroke="#3E3A39" stroke-width="2"/>
-            <!-- 索道車廂本體 (珊瑚粉手繪感) -->
-            <rect x="115" y="72" width="30" height="20" rx="4" fill="#F2A497" stroke="#3E3A39" stroke-width="2.2"/>
-            <rect x="120" y="76" width="9" height="9" rx="2" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.5"/>
-            <rect x="132" y="76" width="9" height="9" rx="2" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.5"/>
+            <!-- 遠方東山山巒 -->
+            <path d="M10 170 Q 75 125 150 155 T 240 165 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5"/>
 
-            <!-- 輕軌高架橋柱與黃綠列車 (李子壩穿樓輕軌) -->
-            <line x1="170" y1="135" x2="170" y2="185" stroke="#3E3A39" stroke-width="3"/>
-            <line x1="210" y1="135" x2="210" y2="185" stroke="#3E3A39" stroke-width="3"/>
-            <line x1="150" y1="135" x2="235" y2="135" stroke="#3E3A39" stroke-width="3"/>
-            <!-- 輕軌車身 (水色/山吹黃) -->
-            <rect x="160" y="120" width="65" height="15" rx="4" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.2"/>
-            <rect x="165" y="123" width="10" height="8" rx="1.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.2"/>
-            <rect x="180" y="123" width="10" height="8" rx="1.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.2"/>
-            <rect x="195" y="123" width="10" height="8" rx="1.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.2"/>
-            <circle cx="218" cy="127" r="2.5" fill="#F6D27A"/>
+            <!-- 朱紅神社鳥居 (伏見稻荷/平安神宮印象) -->
+            <g transform="translate(140, 50)">
+              <!-- 笠木與島木 (頂層橫樑) -->
+              <path d="M-8 15 C 20 8, 60 8, 88 15 L 85 24 C 60 18, 20 18, -5 24 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+              <!-- 貫 (第二層橫木) -->
+              <rect x="0" y="32" width="80" height="7" rx="1.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+              <!-- 額束 (中間直匾牌) -->
+              <rect x="36" y="18" width="8" height="15" fill="#3E3A39"/>
+              <!-- 左右圓柱柱身 -->
+              <rect x="10" y="24" width="10" height="95" rx="2" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+              <rect x="60" y="24" width="10" height="95" rx="2" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+              <!-- 柱根台石 -->
+              <rect x="8" y="112" width="14" height="8" rx="2" fill="#3E3A39"/>
+              <rect x="58" y="112" width="14" height="8" rx="2" fill="#3E3A39"/>
+            </g>
 
-            <!-- 兩江交匯長江底座 -->
-            <rect x="10" y="180" width="230" height="14" rx="7" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+            <!-- 日式石疊地面基座 -->
+            <rect x="15" y="172" width="220" height="18" rx="6" fill="#3E3A39"/>
+            <line x1="25" y1="181" x2="225" y2="181" stroke="#FFFCF6" stroke-width="2" stroke-dasharray="10 8"/>
+
+            <!-- 前景：日式抹茶茶碗與茶筅 (手帳可愛風格) -->
+            <g transform="translate(42, 125)">
+              <!-- 抹茶碗缽 -->
+              <path d="M0 25 C 2 45, 10 50, 28 50 C 46 50, 54 45, 56 25 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="2.5"/>
+              <!-- 碗中濃郁若竹綠抹茶 -->
+              <ellipse cx="28" cy="27" rx="24" ry="7" fill="#B9DAA5" stroke="#3E3A39" stroke-width="1.8"/>
+              <!-- 抹茶熱氣煙霧 -->
+              <path d="M22 16 Q 25 10 21 4" fill="none" stroke="#F2A497" stroke-width="2" stroke-linecap="round"/>
+              <path d="M32 18 Q 36 12 33 6" fill="none" stroke="#F2A497" stroke-width="2" stroke-linecap="round"/>
+              <!-- 和菓子三色糰子 (粉/白/綠) -->
+              <g transform="translate(62, 28)">
+                <line x1="0" y1="20" x2="28" y2="-8" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="5" cy="15" r="5.5" fill="#B9DAA5" stroke="#3E3A39" stroke-width="1.5"/>
+                <circle cx="13" cy="7" r="5.5" fill="#FFFFFF" stroke="#3E3A39" stroke-width="1.5"/>
+                <circle cx="21" cy="-1" r="5.5" fill="#F2A497" stroke="#3E3A39" stroke-width="1.5"/>
+              </g>
+            </g>
           </svg>
         </div>
       </div>
     </header>
 
-    <!-- 3. 航班卡片 (Flight Card) -->
+    <!-- 3. 航班卡片 -->
     <section id="flight" class="handbook-card">
       <h3 class="section-title">✈️ 航班與往返安排</h3>
       <div class="flight-grid">
         <div class="flight-subcard">
-          <h4>去程航班（CA 410）</h4>
-          <p><strong>日期：</strong>2026/12/16 (三)</p>
-          <p><strong>時間：</strong>08:20 桃園機場 (TPE) ➔ 11:45 重慶江北機場 (CKG)</p>
-          <div class="badge-transport">🚇 重慶軌道交通 10 號線轉 2 號線至解放碑（約 55 分）</div>
+          <h4>去程航班（BR 178 / 台北 ➔ 大阪關西）</h4>
+          <p><strong>日期：</strong>2026/11/15 (日)</p>
+          <p><strong>時間：</strong>06:30 桃園機場 (TPE) ➔ 10:10 關西機場 (KIX)</p>
+          <div class="badge-transport">🚄 搭乘關空特急 Haruka 直達京都車站（約 75 分鐘）</div>
         </div>
         <div class="flight-subcard">
-          <h4>回程航班（CA 409）</h4>
-          <p><strong>日期：</strong>2026/12/20 (日)</p>
-          <p><strong>時間：</strong>15:20 重慶江北機場 (CKG) ➔ 18:35 桃園機場 (TPE)</p>
-          <div class="badge-transport">🚕 提前 3 小時由市中心搭車至 T3 航站樓國際出發</div>
+          <h4>回程航班（BR 177 / 大阪關西 ➔ 台北）</h4>
+          <p><strong>日期：</strong>2026/11/18 (三)</p>
+          <p><strong>時間：</strong>17:45 關西機場 (KIX) ➔ 20:05 桃園機場 (TPE)</p>
+          <div class="badge-transport">🚄 提前 3.5 小時由京都站搭 Haruka 前往關西機場出境</div>
         </div>
       </div>
     </section>
 
-    <!-- 4. 每日行程時間軸 (Daily Timeline) -->
+    <!-- 4. 每日行程時間軸 -->
     <section id="itinerary" class="handbook-card">
       <h3 class="section-title">🗺️ 每日詳細行程指南</h3>
+      
+      <!-- 日期膠囊切換 -->
       <div class="day-tabs">
-        <button class="day-tab-btn active" onclick="switchDay(1)">Day 1 (12/16) 解放碑與洪崖洞夜宴</button>
-        <button class="day-tab-btn" onclick="switchDay(2)">Day 2 (12/17) 輕軌穿樓與兩江索道</button>
-        <button class="day-tab-btn" onclick="switchDay(3)">Day 3 (12/18) 鵝嶺二廠與老街步道</button>
-        <button class="day-tab-btn" onclick="switchDay(4)">Day 4 (12/19) 武隆天生三橋壯麗自然</button>
-        <button class="day-tab-btn" onclick="switchDay(5)">Day 5 (12/20) 磁器口晨光與川味賦歸</button>
+        <button class="day-tab-btn active" onclick="switchDay(1)">Day 1 (11/15) 京都初抵與白川古街</button>
+        <button class="day-tab-btn" onclick="switchDay(2)">Day 2 (11/16) 南禪水路與町家茶席</button>
+        <button class="day-tab-btn" onclick="switchDay(3)">Day 3 (11/17) 嵐山竹林與庭園慢活</button>
+        <button class="day-tab-btn" onclick="switchDay(4)">Day 4 (11/18) 宇治名物與溫暖歸途</button>
       </div>
 
       <!-- Day 1 時間軸 -->
@@ -269,38 +330,37 @@
         <div class="timeline-list">
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">13:00</span>
-              <span class="spot-title">江北機場抵達 & 解放碑飯店 Check-in</span>
+              <span class="time-badge">12:00</span>
+              <span class="spot-title">關空特急 Haruka 抵達京都車站 & 飯店寄放行李</span>
             </div>
-            <p>搭乘軌道交通直奔渝中半島核心，辦理入住手續，於八一路好吃街嚐第一碗酸辣粉與山城小湯圓。</p>
-            <div class="badge-transport">🚇 軌道交通 10 號線轉 2 號線</div>
+            <p>搭乘直達特急列車抵達京都車站，轉乘地下鐵抵達四條河原町住宿飯店辦理 Check-in 並寄放大型行李。</p>
+            <div class="badge-transport">🚄 JR 關空特急 Haruka 直達 75 分</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">15:30</span>
-              <span class="spot-title">解放碑步行街 & 魁星樓「1 樓還是 22 樓」奇景</span>
-              <span class="badge-must-go">★ 必去</span>
+              <span class="time-badge">13:30</span>
+              <span class="spot-title">錦市場町家美食散策（章魚燒、豆乳甜甜圈）</span>
             </div>
-            <p>朝聖重慶最具代表性的立體魔幻地標：停在 1 樓搭電梯到 22 樓出門竟又是馬路懸空天橋！</p>
+            <p>漫步於「京都的廚房」錦市場，避開大排長龍名店，品嚐熱騰騰的現烤仙貝與香濃豆乳甜甜圈。</p>
             <div class="badge-transport badge-walk">🚶 步行 8 分鐘</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">18:00</span>
-              <span class="spot-title">巷弄老火鍋：九宮格毛肚鴨腸盛宴</span>
+              <span class="time-badge">15:30</span>
+              <span class="spot-title">祇園白川南通石疊小徑 ＆ 宇治抹茶聖代</span>
               <span class="badge-must-go">★ 必去</span>
             </div>
-            <p>老字號純牛油麻辣九宮格火鍋，配上特製香油蒜泥碟解辣降溫，品嚐現撕鮮毛肚、大刀腰片與酥肉。</p>
-            <div class="badge-transport badge-walk">🚶 步行 5 分鐘</div>
+            <p>穿梭於保存完整的傳統木造町家建築群，欣賞柳樹與溪流交織的古樸風貌，在「祇園小石」享受正宗宇治抹茶冰淇淋與和菓子。</p>
+            <div class="badge-transport badge-walk">🚶 散步 10 分鐘</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">20:00</span>
-              <span class="spot-title">洪崖洞民俗風貌區 ＆ 千廝門大橋夜景</span>
+              <span class="time-badge">18:30</span>
+              <span class="spot-title">先斗町鴨川畔暖心湯豆腐定食</span>
               <span class="badge-must-go">★ 必去</span>
             </div>
-            <p>入夜燈火通明宛若《神隱少女》湯屋，步行至千廝門大橋人行道俯瞰嘉陵江水上映照的金碧輝煌。</p>
-            <div class="badge-transport badge-walk">🚶 漫步 12 分鐘</div>
+            <p>在古色古香的先斗町小巷中品嚐傳統日式昆布柴魚湯豆腐料理，暖胃暖心，靜靜體會京都初夜的慢調風華。</p>
+            <div class="badge-transport badge-walk">🚶 步行 5 分鐘</div>
           </div>
         </div>
       </div>
@@ -310,37 +370,37 @@
         <div class="timeline-list">
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">09:00</span>
-              <span class="spot-title">李子壩軌道交通站：目睹輕軌穿樓奇景</span>
+              <span class="time-badge">09:30</span>
+              <span class="spot-title">東山南禪寺三門 ＆ 紅磚水路閣漫步</span>
               <span class="badge-must-go">★ 必去</span>
             </div>
-            <p>親自搭乘 2 號線穿越住宅大樓，並在下方觀景平台捕捉列車呼嘯滑入居民樓體的神奇瞬間。</p>
-            <div class="badge-transport">🚇 軌道交通 2 號線</div>
+            <p>造訪臨濟宗大本山南禪寺，穿梭於結合古羅馬拱橋風格的明治時代「水路閣」，地勢平緩開闊、綠蔭清幽好走。</p>
+            <div class="badge-transport">🚇 東西線地下鐵至蹴上站步行 8 分</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">11:30</span>
-              <span class="spot-title">山城步道漫步 ＆ 領事巷懸崖步道</span>
+              <span class="time-badge">12:30</span>
+              <span class="spot-title">南禪寺順正名物湯豆腐午宴</span>
             </div>
-            <p>順著依山而建的青石板梯坎漫遊，憑欄眺望長江滔滔江水與老重慶依崖而立的懸空棧道市井生活。</p>
-            <div class="badge-transport">🚌 觀光巴士 480 號 15 分鐘</div>
+            <p>在百年池泉迴遊式日式庭園中，品嚐手工純豆香湯豆腐料理與酥脆天婦羅定食。</p>
+            <div class="badge-transport badge-walk">🚶 步行 3 分鐘</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">15:00</span>
-              <span class="spot-title">長江索道空中跨江之旅</span>
+              <span class="time-badge">14:30</span>
+              <span class="spot-title">哲學之道綠蔭散策 ＆ 百年町家手刷濃抹茶體驗</span>
               <span class="badge-must-go">★ 必去</span>
             </div>
-            <p>搭乘「萬里長江第一條空中走廊」，凌空掠過浩瀚江面，感受山水城林立體層疊的磅礡視野。</p>
-            <div class="badge-transport">🚡 長江索道 5 分鐘</div>
+            <p>沿著琵琶湖疏水旁的石疊步道悠閒漫行，走進傳統日式茶室，親身體驗手刷濃厚宇治抹茶佐精緻四季落雁和菓子。</p>
+            <div class="badge-transport badge-walk">🚶 悠閒散策 15 分鐘</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
               <span class="time-badge">18:00</span>
-              <span class="spot-title">南濱路觀景夜市 ＆ 兩江遊船</span>
+              <span class="spot-title">四條河原町京野菜日式釜飯晚餐</span>
             </div>
-            <p>南岸區回望渝中半島天際線，享用江湖菜辣子雞與烤腦花，乘晚風伴隨兩江璀璨游船鳴笛。</p>
-            <div class="badge-transport badge-walk">🚶 步行 10 分鐘</div>
+            <p>返回四條市區，享用採用新鮮京都產旬季鮮蔬與高湯炊煮而成的暖騰騰旬味釜飯。</p>
+            <div class="badge-transport">🚌 市營巴士 203 號約 15 分</div>
           </div>
         </div>
       </div>
@@ -350,36 +410,37 @@
         <div class="timeline-list">
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">09:30</span>
-              <span class="spot-title">鵝嶺二廠文創公園（電影《從你的全世界路過》取景地）</span>
+              <span class="time-badge">09:00</span>
+              <span class="spot-title">嵯峨野竹林小徑清晨清幽散步</span>
               <span class="badge-must-go">★ 必去</span>
             </div>
-            <p>由重慶印製二廠老舊廠房改建，充滿工業風紅磚倉庫、塗鴉牆、獨立手作店與頂樓無敵江景咖啡館。</p>
-            <div class="badge-transport">🚇 軌道交通 1 號線轉專屬小巴</div>
+            <p>清晨抵達嵐山，趁大批觀光團抵達前獨享青翠挺拔竹林交織而成的光影長廊與微風沙沙天籟。</p>
+            <div class="badge-transport">🚄 JR 嵯峨野線至嵯峨嵐山站約 18 分</div>
+          </div>
+          <div class="timeline-item">
+            <div class="item-header">
+              <span class="time-badge">11:00</span>
+              <span class="spot-title">大河內山莊庭園茶室眺望京都市景</span>
+              <span class="badge-must-go">★ 必去</span>
+            </div>
+            <p>避開天龍寺人潮，登上靜謐的大河內山莊庭園，憑入場券附贈之茶券在林間茶席品味現刷抹茶，俯瞰比叡山與京都市街。</p>
+            <div class="badge-transport badge-walk">🚶 竹林直通步行 3 分鐘</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
               <span class="time-badge">13:00</span>
-              <span class="spot-title">川味豌雜麵 ＆ 梯坎老麵館午餐</span>
+              <span class="spot-title">嵐山渡月橋畔鯛魚茶泡飯午餐</span>
             </div>
-            <p>嚐一碗道地重慶小麵，香軟綿密的黃豆豌豆搭配濃郁炸醬肉末，拌開後麻香四溢、唇齒留香。</p>
-            <div class="badge-transport badge-walk">🚶 步行 5 分鐘</div>
+            <p>在桂川畔品嚐「鯛匠 HANANA」招牌胡麻醬鯛魚刺身與熱高湯茶泡飯三吃料理。</p>
+            <div class="badge-transport badge-walk">🚶 漫步 10 分鐘</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">15:00</span>
-              <span class="spot-title">白象居老居民樓：立體迷宮探祕</span>
+              <span class="time-badge">15:30</span>
+              <span class="spot-title">% ARABICA 渡月橋畔拿鐵咖啡時光</span>
             </div>
-            <p>無電梯的 24 層老樓奇蹟，中間層連接著空中通道橫跨三條不同高度的街道，打卡復古江景窗。</p>
-            <div class="badge-transport">🚌 公車 114 號 20 分鐘</div>
-          </div>
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">19:00</span>
-              <span class="spot-title">九街夜生活與串串香</span>
-            </div>
-            <p>年輕潮流聚落品嚐道地冷鍋串串香與唯怡豆奶，感受熱情奔放的山城深夜煙火氣。</p>
-            <div class="badge-transport">🚇 軌道交通 10 號線</div>
+            <p>外帶一杯芳醇的熱拿鐵，坐在大堰川堤防邊遠眺嵐山青翠山巒與往來屋形船，享受無拘無束的靜謐時光。</p>
+            <div class="badge-transport badge-walk">🚶 步行 4 分鐘</div>
           </div>
         </div>
       </div>
@@ -389,130 +450,107 @@
         <div class="timeline-list">
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">07:30</span>
-              <span class="spot-title">專車出發：武隆喀斯特世界自然遺產</span>
-            </div>
-            <p>晨間啟程前往武隆山區，車程欣賞烏江畫廊險峻峽谷風光。</p>
-            <div class="badge-transport">🚐 專車接送 2.5 小時</div>
-          </div>
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">10:30</span>
-              <span class="spot-title">武隆天生三橋 ＆ 天福官驛</span>
+              <span class="time-badge">09:30</span>
+              <span class="spot-title">三十三間堂千尊金色十一面觀音像靜心參拜</span>
               <span class="badge-must-go">★ 必去</span>
             </div>
-            <p>搭乘垂直百米懸崖透明電梯直落天坑底部，徒步穿越天龍橋、青龍橋、黑龍橋，朝聖電影經典四合院驛站。</p>
-            <div class="badge-transport badge-walk">🚶 峽谷徒步 2 小時</div>
+            <p>走訪全日本最長木造建築，肅立仰望供奉於堂內 1,001 尊神態各異的國寶千手觀音金銅雕像，動線平坦好走、莊嚴平靜。</p>
+            <div class="badge-transport">🚌 市營巴士 206 號約 10 分</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
-              <span class="time-badge">14:00</span>
-              <span class="spot-title">龍水峽地縫地質奇觀</span>
-            </div>
-            <p>深邃幽靜的喀斯特地下伏流地縫，沿途飛瀑高掛、泉水潺潺，宛若走入地心冒險世界。</p>
-            <div class="badge-transport">🚌 景區接駁車 15 分鐘</div>
-          </div>
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">18:30</span>
-              <span class="spot-title">返抵市區 ＆ 烤魚消夜慶祝</span>
-            </div>
-            <p>享用萬州烤魚鮮嫩焦脆的魚肉與香辣豆花配菜，微醺慶祝壯麗的峽谷探險。</p>
-            <div class="badge-transport">🚐 專車返程市區</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Day 5 時間軸 -->
-      <div id="day-5" class="timeline-container">
-        <div class="timeline-list">
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">09:00</span>
-              <span class="spot-title">磁器口千年古鎮：老茶館與麻花伴手禮</span>
+              <span class="time-badge">11:30</span>
+              <span class="spot-title">京都車站伊勢丹地下街「中村藤吉」抹茶手信採買</span>
               <span class="badge-must-go">★ 必去</span>
             </div>
-            <p>「一條石板路，千年磁器口」，早晨遊客稀少時品嚐陳麻花，在老茶館聽一曲川劇變臉與蓋碗茶。</p>
-            <div class="badge-transport">🚇 軌道交通 1 號線直達</div>
-          </div>
-          <div class="timeline-item">
-            <div class="item-header">
-              <span class="time-badge">12:00</span>
-              <span class="spot-title">毛血旺告別午宴 & 行李打包</span>
-            </div>
-            <p>最後一頓地道江湖菜：磁器口招牌正宗毛血旺，熱油澆淋乾辣椒與花椒，麻香撲鼻濃郁至極。</p>
-            <div class="badge-transport badge-walk">🚶 步行 5 分鐘</div>
+            <p>在京都車站挑選頂級宇治抹茶生巧克力、濃茶夾心餅乾、丸久小山園手刷抹茶粉等伴手禮。</p>
+            <div class="badge-transport badge-walk">🚶 步行 12 分鐘</div>
           </div>
           <div class="timeline-item">
             <div class="item-header">
               <span class="time-badge">13:30</span>
-              <span class="spot-title">前往江北機場出境賦歸</span>
+              <span class="spot-title">搭乘 Haruka 直達關西機場 ＆ 滿載和風回憶返台</span>
             </div>
-            <p>搭乘軌道交通前往江北機場 T3 航廈，辦理登機與托運手續，滿載麻辣底料伴手禮滿載歸國。</p>
-            <div class="badge-transport">🚇 軌道交通 10 號線直達機場</div>
+            <p>領取預辦行李，搭乘 JR 關空特急直奔關西機場第一航廈，辦理出境檢查，搭機返回溫暖的家。</p>
+            <div class="badge-transport">🚄 JR Haruka 特急列車約 75 分</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5. 待辦清單與住宿資訊 (Checklist & Accommodation) -->
+    <!-- 5. 待辦清單與住宿備忘 -->
     <section id="checklist" class="handbook-card">
       <h3 class="section-title">🎒 行前備忘與住宿指南</h3>
+      
       <div style="margin-bottom: 24px;">
-        <h4 style="margin-bottom: 12px;">✅ 必備證件與實用 APP 打勾清單</h4>
+        <h4 style="margin-bottom: 12px;">✅ 必帶裝備與手續打勾清單</h4>
         <label class="checklist-item">
           <input type="checkbox" onchange="toggleCheck(this)">
-          <span>有效台胞證正本（效期 6 個月以上）</span>
+          <span>預先填寫 Visit Japan Web 日本入境與海關申報 QR Code</span>
         </label>
         <label class="checklist-item">
           <input type="checkbox" onchange="toggleCheck(this)">
-          <span>手機預先開通行動支付（微信支付 WeChat Pay / 支付寶 Alipay 綁定海外信用卡）</span>
+          <span>iPhone 錢包綁定 ICOCA / Suica 交通卡並加值</span>
         </label>
         <label class="checklist-item">
           <input type="checkbox" onchange="toggleCheck(this)">
-          <span>預先下載「高德地圖」（重慶立體 3D 導航必備）與「重慶公共交通乗車碼」</span>
+          <span>預訂 JR 關空特急 Haruka 往返優惠車票（憑 QR Code 機台快速取票）</span>
         </label>
         <label class="checklist-item">
           <input type="checkbox" onchange="toggleCheck(this)">
-          <span>隨身攜帶極致舒適慢跑鞋（山城日行 2 萬步階梯考驗）與腸胃常備藥</span>
+          <span>準備好穿脫的健走鞋與厚底舒適襪子（京都寺院多需脫鞋參拜）</span>
         </label>
       </div>
+
       <div style="background-color: var(--bg-washipaper); border: 3px solid var(--border-dark); border-radius: 16px; padding: 16px;">
         <h4 style="margin-bottom: 8px;">🏨 預定住宿資訊</h4>
-        <p><strong>飯店名稱：</strong>重慶解放碑威斯汀酒店（The Westin Chongqing Liberation Square）</p>
-        <p><strong>飯店地址：</strong>重慶市渝中區新華路 222 號（步行 5 分鐘直通解放碑與長江索道）</p>
-        <p><strong>入住提醒：</strong>高樓層坐擁兩江交匯壯闊天際線，頂樓設有高空無邊際景觀水池，下午 15:00 辦理 Check-in。</p>
+        <p><strong>飯店名稱：</strong>京都三條光芒酒店（Candeo Hotels Kyoto Karasuma Rokkaku）</p>
+        <p><strong>飯店地址：</strong>京都市中京區六角通烏丸西入骨屋町 149</p>
+        <p><strong>備註說明：</strong>下午 15:00 後辦理入住，飯店由百年京町家改建，附設頂樓日式露天大浴場，步行 3 分鐘直達烏丸御池地鐵站。</p>
       </div>
     </section>
+
   </div>
 
   <script>
     function switchDay(dayNum) {
       document.querySelectorAll('.timeline-container').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.day-tab-btn').forEach(btn => btn.classList.remove('active'));
+      
       const targetTimeline = document.getElementById(`day-${dayNum}`);
-      if (targetTimeline) targetTimeline.classList.add('active');
+      if (targetTimeline) {
+        targetTimeline.classList.add('active');
+      }
+      
       const buttons = document.querySelectorAll('.day-tab-btn');
-      if (buttons[dayNum - 1]) buttons[dayNum - 1].classList.add('active');
+      if (buttons[dayNum - 1]) {
+        buttons[dayNum - 1].classList.add('active');
+      }
     }
+
     function updateCountdown() {
-      const targetDate = new Date('2026-12-16T08:20:00+08:00').getTime();
+      const targetDate = new Date('2026-11-15T06:30:00+08:00').getTime();
       const now = new Date().getTime();
       const diff = targetDate - now;
+
       if (diff > 0) {
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         document.getElementById('countdown-timer').innerText = `${days} 天 ${hours} 小時`;
       } else {
-        document.getElementById('countdown-timer').innerText = `重慶旅程進行中 🎉`;
+        document.getElementById('countdown-timer').innerText = `京都旅程進行中 🎉`;
       }
     }
     updateCountdown();
     setInterval(updateCountdown, 60000);
+
     function toggleCheck(checkbox) {
       const parent = checkbox.closest('.checklist-item');
-      if (checkbox.checked) parent.classList.add('checked');
-      else parent.classList.remove('checked');
+      if (checkbox.checked) {
+        parent.classList.add('checked');
+      } else {
+        parent.classList.remove('checked');
+      }
     }
   </script>
 </body>
